@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set env to prod
-        run: echo $GITHUB_ENV
+        run: echo "TEST_ENV=hello" >> $GITHUB_ENV
