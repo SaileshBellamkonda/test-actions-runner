@@ -8,5 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set env to prod
-        if: github.base_ref == 'main' || github.ref == 'refs/heads/main'
         run: echo "ENV_NAME=prod" >> $GITHUB_ENV
+      - name: Echo ENV_NAME
+        run: echo $ENV_NAME
