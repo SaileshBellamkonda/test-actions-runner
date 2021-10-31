@@ -1,0 +1,12 @@
+name: Issue 1445
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set env to prod
+        if: github.base_ref == 'main' || github.ref == 'refs/heads/main'
+        run: echo "ENV_NAME=prod" >> $GITHUB_ENV
