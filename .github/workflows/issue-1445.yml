@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: test
+        working-directory: ${{ github.workspace }}/test
     steps:
       - uses: actions/checkout@v2
       - name: Set env to prod
