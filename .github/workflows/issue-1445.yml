@@ -10,7 +10,14 @@ jobs:
       run:
         working-directory: ${{ github.workspace }}/test
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/github-script@v5
+        with:
+          script: |
+            const fs = require('fs');
+            const dir = '${{ github.workspace }}/test'
+            if (!fs.existsSync(dir)) {
+              fs.mkdirSync(dir);
+            }
       - name: Set env to prod
         run: |
           pwd
