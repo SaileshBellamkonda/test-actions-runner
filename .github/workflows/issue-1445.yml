@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set env to prod
-        run: echo "ENV_NAME=prod" >> $GITHUB_ENV
+        run: |
+          echo $GITHUB_ENV
+          echo "ENV_NAME=prod" >> $GITHUB_ENV
       - name: Echo ENV_NAME
         run: echo $ENV_NAME
