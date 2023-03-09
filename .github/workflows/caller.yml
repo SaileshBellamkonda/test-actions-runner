@@ -6,7 +6,10 @@ on:
 jobs:
   job1:
     uses: ./.github/workflows/called.yml
+    with:
+      environment: ''
 
   job2:
-    environment: dev
     uses: ./.github/workflows/called.yml
+    with:
+      environment: 'dev'
