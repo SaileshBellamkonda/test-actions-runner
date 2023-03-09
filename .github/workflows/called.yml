@@ -1,0 +1,13 @@
+name: called
+
+on:
+  workflow_call:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      VAR1: ${{ vars.HELLO }}
+    steps:
+      - run: |
+          echo $VAR1

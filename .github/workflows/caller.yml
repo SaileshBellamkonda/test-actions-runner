@@ -1,0 +1,12 @@
+name: Caller
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    uses: ./.github/workflows/called.yml
+
+  job2:
+    environment: dev
+    uses: ./.github/workflows/called.yml
