@@ -9,10 +9,11 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     environment: ${{ inputs.environment }}
     env:
       VAR1: ${{ vars.HELLO }}
     steps:
       - run: |
           echo $VAR1
+          id
